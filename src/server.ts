@@ -1,4 +1,3 @@
-import cors from "cors";
 import express from "express";
 import { createClient } from "@google/maps";
 import dotenv from "dotenv";
@@ -7,8 +6,6 @@ dotenv.config();
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 const api = process.env.api;
-
-app.use(cors());
 
 if (!api) {
     throw new Error("Please set the API key in the environment variable 'api'");
